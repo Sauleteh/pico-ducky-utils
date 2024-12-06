@@ -1,0 +1,17 @@
+REM Author: lRantor
+
+REM-------------------------------------------------------------------------------REM
+REM																				  REM
+REM                            AUTO-LOGIN WINDOWS 10		                      REM						
+REM																				  REM
+REM-------------------------------------------------------------------------------REM
+
+ESC
+DELAY 350
+STRING USER
+DELAY 350
+TAB
+DELAY 350
+STRING PASSWORD
+DELAY 350
+ENTER
