@@ -8,7 +8,7 @@ We have modified the standard version of the Pico-Ducky to allow mouse input fro
 TODO
 
 ### 3D Model
-TODO
+In order to develop a robust and discreet device we have tested and modeled different 3D designs. Some of the versions we have tested can be found in the pico-ducky-case directory.
 
 ## How to build everything?
 TODO
