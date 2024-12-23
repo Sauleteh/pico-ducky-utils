@@ -8,5 +8,5 @@ Description
 
 <h2>Version 1.0</h2>
 Model remixed from <a href="https://www.thingiverse.com/thing:4808999">Slim modular Raspberry Pi Pico Case made by "maximilliampere"</a>
-<h2>## Version 2.0</h2>
+<h2>Version 2.0</h2>
 Model remixed from <a href="https://www.thingiverse.com/thing:4793356">Raspberry Pi Pico Minimal Housing (RP2040) made by "decoder"</a>
