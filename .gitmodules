@@ -1,0 +1,3 @@
+[submodule "pico-ducky-recorder"]
+	path = pico-ducky-recorder
+	url = https://github.com/Sauleteh/pico-ducky-recorder.git
